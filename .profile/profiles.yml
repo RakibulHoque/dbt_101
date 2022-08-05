@@ -1,0 +1,22 @@
+_101:
+  target: dev-service-account
+  outputs:
+    dev-service-account:
+      type: bigquery
+      method: service-account
+      project: irib-rhoq
+      dataset: _101
+      thread: 4
+      keyfile: "{{ env_var('GCLOUD_SERVICE_JSON') }}"
+      timeout_seconds: 300
+      priority: interactive
+      retries: 1
+    dev-oauth:
+      type: bigquery
+      method: oauth
+      project: irib-rhoq
+      dataset: _101
+      threads: 4
+      timeout_seconds: 300
+      priority: interactive
+      fixed_retries: 1
