@@ -1,12 +1,12 @@
 # A Sample DBT project with testing
 
+## Requirements
+- You must have [python](https://www.python.org/downloads/) installed (version >= 3.8)
+- You must have [gcloud cli](https://cloud.google.com/sdk/docs/install) tool installed
+- You must have access to specific gcloud projects
 ## Setup
 ```
-source .env
-bash setup.sh
-export ROOT_PROJECT_DIR=$ROOT_PROJECT_DIR
-export DBT_PROJECT_DIR=$DBT_PROJECT_DIR
-export DBT_PROFILES_DIR=$DBT_PROFILES_DIR
-export GCLOUD_SERVICE_JSON=$GCLOUD_SERVICE_JSON
-
+gcloud auth login --update-adc
+source init.sh
+cd $DBT_PROJECT_DIR && dbt debug
 ```
