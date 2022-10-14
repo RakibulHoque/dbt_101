@@ -88,8 +88,21 @@ function create_python_venv() {
       then
           log "Directory $ROOT_PROJECT_DIR/venv exists."
       else
-          log "Creating virtual environment"
-          python3 -m venv venv
+          log "Creating virtual environment for os:$OSTYPE"
+          if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+              python -m venv venv
+          elif [[ "$OSTYPE" == "darwin"* ]]; then
+              python3 -m venv venv      # Mac OSX
+          elif [[ "$OSTYPE" == "cygwin" ]]; then
+              python -m venv venv      # POSIX compatibility layer and Linux environment emulation for Windows
+          elif [[ "$OSTYPE" == "msys" ]]; then
+              python -m venv venv      # Lightweight shell and GNU utilities compiled for Windows (part of MinGW)
+          elif [[ "$OSTYPE" == "freebsd"* ]]; then
+              python -m venv venv
+          else
+              log "Unknown os version, trying to install venv..."
+              python -m venv venv      # Unknown
+          fi
           log "Virtual environment created"
       fi
       log "Activating virtual environment"
