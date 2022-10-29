@@ -1,0 +1,1 @@
+clickhouse+native://username:password@host.docker.internal:18123/my_database
