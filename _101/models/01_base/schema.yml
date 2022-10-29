@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: foo_model
+    description: foo_model
+    config:
+      materialized: table
+    meta:
+      fal:
+        scripts:
+          before:
+            - el_scripts/foo_run_el_job.py

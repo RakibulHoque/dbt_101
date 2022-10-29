@@ -1,0 +1,7 @@
+version: 2
+
+sources:
+- name: foo_source
+  schema: foo_dataset
+  tables:
+  - name: _airbyte_raw_iris_data

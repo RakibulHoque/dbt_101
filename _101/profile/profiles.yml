@@ -40,13 +40,21 @@ _101:
       retries: 1
 clickhouse:
   target: dev
+  fal_extract_load:
+    dev:
+      my_airbyte_el:
+        type: airbyte
+        host: http://127.0.0.1:8000
+        connections:
+          - name: "S3_Example <> Clickhouse"
+            id: 4a2b82db-7b95-4c14-ae4c-2de439b270c8
   outputs:
     dev:
       type: clickhouse
       schema: bdmaps
       host: localhost
       port: 18123
-      user: default
-      password: ''
+      user: username
+      password: password
       secure: False
       
