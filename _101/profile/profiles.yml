@@ -38,3 +38,15 @@ _101:
       timeout_seconds: 300
       priority: interactive
       retries: 1
+clickhouse:
+  target: dev
+  outputs:
+    dev:
+      type: clickhouse
+      schema: bdmaps
+      host: localhost
+      port: 18123
+      user: default
+      password: ''
+      secure: False
+      

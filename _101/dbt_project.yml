@@ -2,7 +2,7 @@ name: '_101'
 version: '0.1.0'
 config-version: 2
 
-profile: '_101'
+profile: 'clickhouse'
 
 model-paths: ["models"]
 analysis-paths: ["analyses"]
