@@ -10,3 +10,6 @@ gcloud auth login --update-adc
 source init.sh
 cd $DBT_PROJECT_DIR && dbt debug
 ```
+
+## Refs
+https://www.astrafy.io/articles/dbt-at-scale-on-google-cloud-part-1
